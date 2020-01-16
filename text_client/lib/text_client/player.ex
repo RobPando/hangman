@@ -44,7 +44,7 @@ defmodule TextClient.Player do
   end
 
   defp make_move(game) do
-    {game_service, tally} = Hangman.make_move(game.game_service, game.guess)
-    %State{game | game_service: game_service, tally: tally, guess: ""}
+    tally = Hangman.make_move(game.game_service, game.guess)
+    %State{game | tally: tally}
   end
 end

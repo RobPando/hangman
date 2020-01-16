@@ -6,9 +6,12 @@ defmodule TextClient.Summary do
       "\n",
       "Word: #{Enum.join(letters, " ")}",
       "\n",
-      "You have #{turns_left} turn#{turns_left > 1 && "s"} left.",
+      "You have #{turns_left} turn#{check_plural(turns_left > 1)} left.",
       "\n"
     ]
     game
   end
+
+  def check_plural(true), do: "s"
+  def check_plural(false), do: ""
 end
