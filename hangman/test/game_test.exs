@@ -68,6 +68,6 @@ defmodule GameTest do
     end)
 
     assert game.game_state == :lost
-    assert game.turns_left == 1
+    assert game.turns_left == 0
   end
 end
