@@ -2,6 +2,7 @@ import { Socket } from "phoenix";
 
 export default class HangmanSocket {
   constructor() {
+    this.tally = {}
     this.socket = new Socket("/socket", {});
     this.socket.connect();
   }
@@ -9,7 +10,7 @@ export default class HangmanSocket {
   connect_to_hangman() {
     this.setup_channel();
     this.channel.on("tally", tally => {
-      console.dir(tally);
+      this.tally = tally;
     })
   }
 
