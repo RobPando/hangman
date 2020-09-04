@@ -1,5 +1,7 @@
 # Hangman
 
+Hello World.
+
 ## Play in terminal
 
 `cd text_client`
